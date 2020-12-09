@@ -26,7 +26,8 @@
             </a>
         </td>
         <td width="80px">
-            <a href="javascript:delData(<%= obj.id.to_s + ",'".to_s + obj.title.to_s).html_safe %>');">削除
+            <a href="javascript:delData(
+            <%= (obj.id.to_s + ",'".to_s + obj.title.to_s).html_safe %>');">削除
             </a>
         </td>
     </tr>

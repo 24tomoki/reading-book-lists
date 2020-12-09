@@ -5,11 +5,11 @@ class CardsController < ApplicationController
   end
 
   def show
-    @cards = Card.find(params[:id])
+    @card = Card.find(params[:id])
   end
   
   def add
-    if requset.post? then
+    if request.post? then
       Card.create(card_params)
       goback
     else
@@ -26,14 +26,13 @@ class CardsController < ApplicationController
   end
   
   def delete
-    Card.find(params[:id])
-    Card.destroy
+    Card.find(params[:id]).destroy
     goback
   end
   
   private
   def card_params
-    params.require(:card).permit(:title, :suthor, :price, :pubulisher, :memo)
+    params.require(:card).permit(:title, :author, :price, :publisher, :memo)
   end
   
   def goback
